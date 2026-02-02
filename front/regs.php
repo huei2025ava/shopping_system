@@ -30,7 +30,7 @@
     </tr>
 </table>
 <div class="ct">
-    <input type="submit" value="註冊">
+    <input type="button" value="註冊" onclick="regs()">
     <input type="reset" value="重置">
 </div>
 
@@ -45,6 +45,34 @@ function chkAcc() {
         } else {
             alert("此帳號可使用")
         }
+    })
+}
+
+function regs() {
+    let data = {
+        acc: $("#acc").val(),
+        pw: $("#pw").val(),
+        name: $("#name").val(),
+        tel: $("#tel").val(),
+        address: $("#address").val(),
+        email: $("#email").val()
+    }
+
+    $.get("api/chk_acc.php", {
+        acc: data.acc
+    }, (res) => {
+        // console.log("data acc: " + data.acc)
+        // console.log("acc: " + acc)
+        if (parseInt(res) === 1 || data.acc == 'admin') {
+            // 要寫data.acc，寫acc會抓到整個 HTML 標籤
+            alert("此帳號已存在,請重設其他帳號")
+            $("#acc").val("")
+        } else {
+            $.post("api/regs.php", data, () => {
+                location.href = 'index.php?do=login'
+            })
+        }
+
     })
 }
 </script>
