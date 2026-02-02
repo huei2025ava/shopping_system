@@ -137,4 +137,3 @@ function q($sql){
 $Bot = new DB('bot');
 $Mem = new DB('members');
 $Admin = new DB('admin');
-$Mem = new DB('members');
