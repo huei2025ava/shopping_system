@@ -4,11 +4,11 @@
     <table class="all">
         <tr>
             <td class="tt ct">帳號</td>
-            <td class="pp"><input type="acc"></td>
+            <td class="pp"><input type="acc" name="acc"></td>
         </tr>
         <tr>
             <td class="tt ct">密碼</td>
-            <td class="pp"><input type="password"></td>
+            <td class="pp"><input type="password" name="pw"></td>
         </tr>
         <tr>
             <td class="tt ct">權限</td>
