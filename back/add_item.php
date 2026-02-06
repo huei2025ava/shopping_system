@@ -54,3 +54,28 @@
         <input type="button" value="返回">
     </div>
 </form>
+
+<script>
+getTypes('big')
+
+$('#big').on('change', function() {
+    getTypes('mid');
+})
+
+function getTypes(type) {
+    switch (type) {
+        case "big":
+            $.get("api/get_bigs.php", (big) => {
+                $("#big").html(bigs);
+                getTypes('mid');
+            })
+            break;
+        case "mid":
+            let big_id = $("#big").val();
+            $.get("api/get_mids.php", {
+                big_id
+            })
+
+    }
+}
+</script>
