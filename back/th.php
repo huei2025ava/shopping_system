@@ -11,7 +11,40 @@
     <button onclick="saveType('mid')">新增</button>
 </div>
 
-<h2 class="ct">商品管理</h2>
+<table class="all">
+    <?php
+      $bigs = $Type->all(['big_id' => 0]);
+    foreach ($bigs as $big):
+        ?>
+    <tr class="tt">
+        <td><?= $big['name'] ?></td>
+        <td class="ct">
+            <button class="edit_btn" data-id="<?= $big['id'] ?>">修改</button>
+            <button class="del_btn" data-id="<?= $big['id'] ?>">刪除</button>
+        </td>
+    </tr>
+    <?php
+          if ($Type->count(['big_id' => $big['id']]) > 0):
+              $mids = $Type->all(['big_id' => $big['id']]);
+              foreach ($mids as $mid):
+                  ?>
+    <tr class=" pp tt">
+        <td><?= $mid['name'] ?></td>
+        <td class="ct">
+            <button class="edit_btn" data-id="<?= $mid['id'] ?>">修改</button>
+            <button class="del_btn" data-id="<?= $mid['id'] ?>">刪除</button>
+        </td>
+    </tr>
+    <?php
+              endforeach;
+          endif;
+        ?>
+    <?php
+    endforeach;
+    ?>
+</table>
+
+<h2 class=" ct">商品管理</h2>
 
 <script>
 getBigs();
@@ -42,4 +75,25 @@ function getBigs() {
         $("#bigs").html(bigs);
     })
 }
+
+$(".del_btn").on("click", function() {
+    let id = $(this).data('id');
+    $.post("api/del.php", {
+        id,
+        table: 'Type'
+    }, () => {
+        location.reload()
+    })
+})
+$(".edit_btn").on("click", function() {
+    let id = $(this).data('id');
+    let text = $(this).parent().prev().text();
+    let name = prompt("請輸入分類名稱", text)
+    $.post("api/save_type.php", {
+        id,
+        name
+    }, () => {
+        location.reload()
+    })
+})
 </script>
