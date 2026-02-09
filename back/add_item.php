@@ -74,8 +74,10 @@ function getTypes(type) {
             let big_id = $("#big").val();
             $.get("api/get_mids.php", {
                 big_id
+            }, (mids) => {
+                $("#mid").html(mids);
             })
-
+            break;
     }
 }
 </script>
