@@ -19,53 +19,50 @@
         </tr>
         <tr>
             <td class="tt ct">商品名稱</td>
-            <td class="pp">
-                <input type="text" name="name" id="name">
-            </td>
+            <td class="pp"><input type="text" name="name" id="name"></td>
         </tr>
         <tr>
             <td class="tt ct">商品價格</td>
-            <td class="pp">
-                <input type="number" name="price" id="price">
-            </td>
+            <td class="pp"><input type="number" name="price" id="price"></td>
         </tr>
         <tr>
             <td class="tt ct">規格</td>
-            <td class="pp">
-                <input type="number" name="stock" id="stock">
-            </td>
+            <td class="pp"><input type="text" name="spec" id="spec"></td>
+        </tr>
+        <tr>
+            <td class="tt ct">庫存量</td>
+            <td class="pp"><input type="number" name="stock" id="stock"></td>
         </tr>
         <tr>
             <td class="tt ct">商品圖片</td>
-            <td class="pp">
-                <input type="file" name="img" id="img">
-            </td>
+            <td class="pp"><input type="file" name="img" id="img"></td>
         </tr>
         <tr>
             <td class="tt ct">商品介紹</td>
-            <td class="pp">
-                <textarea name="intro" id="intro"></textarea>
-            </td>
+            <td class="pp"><textarea name="intro" id="intro"></textarea></td>
         </tr>
     </table>
+
     <div class="ct">
         <input type="submit" value="新增">
         <input type="reset" value="重置">
         <input type="button" value="返回">
     </div>
+
 </form>
 
 <script>
 getTypes('big')
 
-$('#big').on('change', function() {
+$("#big").on('change', function() {
     getTypes('mid');
 })
 
 function getTypes(type) {
+
     switch (type) {
         case "big":
-            $.get("api/get_bigs.php", (big) => {
+            $.get("api/get_bigs.php", (bigs) => {
                 $("#big").html(bigs);
                 getTypes('mid');
             })
@@ -77,7 +74,10 @@ function getTypes(type) {
             }, (mids) => {
                 $("#mid").html(mids);
             })
+
             break;
     }
+
+
 }
 </script>
