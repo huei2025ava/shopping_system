@@ -18,7 +18,7 @@
             <?=$row['acc'];?>
         </td>
         <td class="pp ct">
-            <?= str_repeat("-", "/",mb_strlen($row['reg_date'])) ?>
+            <?=str_replace("-","/",$row['reg_date']);?>
         </td>
         <td class="pp ct">
             <button class='edit-btn' data-id='<?=$row['id'];?>'>修改</button>

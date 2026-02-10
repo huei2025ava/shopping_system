@@ -105,8 +105,20 @@ input[type=text],input[type=password]
 div.ww:hover > div.s
 {
 	display:block;
+	width:100%;
+	position:absolute;
+	top:40px;
+	left:120px;
+	z-index:100;
 }
 .sb button
 {
 	font-size:12px;
+}
+div.ww{
+	position: relative;
+}
+#left div.s a
+{
+	background-color: lightgreen;
 }
