@@ -66,7 +66,7 @@ include_once "./api/db.php";
                     </div>
                 </span>
             </div>
-            <div id="right">
+            <div id="right" style="overflow: scroll;">
                 <!-- 主內容區 -->
                 <?php
             $do = $_GET['do'] ?? 'main';

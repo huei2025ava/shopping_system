@@ -17,6 +17,16 @@ if (isset($_GET['type']) && $_GET['type'] != 0) { // $_GET['type'] = 0 是全部
 }
 ?>
 
+<style>
+.pd {
+    padding: 5px;
+}
+
+.bl {
+    border: 1px solid white;
+}
+</style>
+
 <h2><?= $nav_str ?></h2>
 
 <?php 
@@ -29,15 +39,15 @@ foreach ($rows as $row ):
         </a>
     </div>
     <div style="width:60%">
-        <div class="ct tt" style='padding:5px 2px;border:1px solid white'><?=$row['name'];?></div>
-        <div class="pp" style='padding:5px 2px;border:1px solid white'>
+        <div class="ct tt pd bl"><?=$row['name'];?></div>
+        <div class="pp pd bl">
             價錢:<?=$row['price'];?>
             <a href="?do=buycart&id=<?=$row['id'];?>&qt=1" style="float:right">
                 <img src="icon/0402.jpg" alt="">
             </a>
         </div>
-        <div class="pp" style='padding:5px 2px;border:1px solid white'>規格:<?=$row['spec'];?></div>
-        <div class="pp" style='padding:5px 2px;'>簡介:<?=mb_substr($row['intro'],0,20);?>...</div>
+        <div class="pp pd bl">規格:<?=$row['spec'];?></div>
+        <div class="pp pd">簡介:<?=mb_substr($row['intro'],0,20);?>...</div>
     </div>
 </div>
 <?php 
