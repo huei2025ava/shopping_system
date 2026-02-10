@@ -49,7 +49,7 @@ include_once "./api/db.php";
                             echo "<div class='s'>";
                             foreach ($mids as $mid):
                                 ?>
-                    <a href="?type=<?= $mid['id']; ?>">
+                    <a href="?type=<?= $mid['id']; ?>" style="background-color: lightgrey;">
                         <?= $mid['name'] ?>(<?= $Item->count(['sh' => 1,'mid' => $mid['id']]) ?>)</a>
                     <?php
                             endforeach;
@@ -61,8 +61,9 @@ include_once "./api/db.php";
                 </div>
                 <span>
                     <div>進站總人數</div>
-                    <div style="color:#f00; font-size:28px;">
-                        00005 </div>
+                    <div style=" color:#f00; font-size:28px;">
+                        00005
+                    </div>
                 </span>
             </div>
             <div id="right">
