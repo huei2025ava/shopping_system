@@ -66,10 +66,8 @@
         <td>
             <button data-table="Item" onclick="location.href='?do=edit_item&id=<?= $item['id'] ?>'">修改</button>
             <button class='del-btn' data-table="Item" data-id="<?=$item['id'] ?>">刪除</button>
-            <button class='on-btn' data-table="Item" data-table="Item" data-sh="1"
-                data-id="<?=$item['id'] ?>'">上架</button>
-            <button class='off-btn' data-table="Item" data-table="Item" data-sh="0"
-                data-id="<?=$item['id'] ?>'">下架</button>
+            <button class='on-btn' data-table="Item" data-sh="1" data-id="<?=$item['id'] ?>">上架</button>
+            <button class='off-btn' data-table="Item" data-sh="0" data-id="<?=$item['id'] ?>">下架</button>
         </td>
     </tr>
     <?php 
