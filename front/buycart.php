@@ -13,7 +13,7 @@ if (!isset($_SESSION['mem'])) {
 <?php 
 if (empty($_SESSION['buycart'])): 
 ?>
-<h2 class='ct'>購物車內沒有商品</h2>;
+<h2 class='ct'>購物車內沒有商品</h2>
 <?php else:?>
 <h2 class="ct"><?= $_SESSION['mem'] ?> 的購物車</h2>
 <table class="all">
