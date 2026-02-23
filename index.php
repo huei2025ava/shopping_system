@@ -27,7 +27,13 @@ include_once "./api/db.php";
                 <a href="?do=news">最新消息</a> |
                 <a href="?do=look">購物流程</a> |
                 <a href="?do=buycart">購物車</a> |
+                <?php 
+                if (isset($_SESSION['mem'])):
+                ?>
+                <a href="api/logout.php">登出</a> |
+                <?php else:?>
                 <a href="?do=login">會員登入</a> |
+                <?php endif;?>
                 <a href="?do=admin">管理登入</a>
             </div>
             情人節特惠活動 &nbsp; 為了慶祝七夕情人節，將舉辦情人兩人到現場有七七折之特惠活動~
