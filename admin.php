@@ -50,7 +50,7 @@ if (!is_array($pr)) {
                 <a href="?do=logout" style="color:#f00;">登出</a>
             </div>
         </div>
-        <div id="right">
+        <div id="right" style="width: 70%;">
             <?php
         	$do=$_GET['do']??'admin';
         	$file="back/".$do.".php";
